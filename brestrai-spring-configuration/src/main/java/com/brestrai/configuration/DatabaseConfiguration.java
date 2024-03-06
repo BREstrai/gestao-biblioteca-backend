@@ -8,26 +8,27 @@ public class DatabaseConfiguration extends JpaConfiguration {
 
     @Override
     public String setEntityScanPackage() {
-        return null;
+        return "com.brestrai";
     }
 
     @Override
     public String setDriver() {
-        return null;
+        return "org.postgresql.Driver";
     }
 
     @Override
     public String setUrl() {
-        return null;
+        return "jdbc:postgresql://localhost:5432/brestrai";
     }
 
     @Override
     public String setUsername() {
-        return null;
+        return "postgres";
     }
 
     @Override
     public String setPassword() {
-        return null;
+        return "postgres";
     }
+
 }
