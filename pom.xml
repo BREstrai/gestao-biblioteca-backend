@@ -29,11 +29,6 @@
             <optional>true</optional>
         </dependency>
 
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-        </dependency>
-
     </dependencies>
 
 </project>
