@@ -24,6 +24,12 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.brestrai</groupId>
+            <artifactId>utils-template</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
