@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.brestrai</groupId>
-            <artifactId>utilitario</artifactId>
+            <artifactId>utils-template</artifactId>
             <version>1.0.1</version>
         </dependency>
 
