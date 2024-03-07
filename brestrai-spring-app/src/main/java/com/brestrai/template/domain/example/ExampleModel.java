@@ -1,6 +1,5 @@
-package com.brestrai.template.domain.model;
+package com.brestrai.template.domain.example;
 
-import com.brestrai.template.domain.dto.ExampleDto;
 import com.brestrai.utils.template.commons.domain.IModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

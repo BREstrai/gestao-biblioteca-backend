@@ -1,6 +1,5 @@
-package com.brestrai.template.domain.dto;
+package com.brestrai.template.domain.example;
 
-import com.brestrai.template.domain.model.ExampleModel;
 import com.brestrai.utils.template.commons.domain.IDto;
 
 public record ExampleDto() implements IDto<ExampleModel> {
