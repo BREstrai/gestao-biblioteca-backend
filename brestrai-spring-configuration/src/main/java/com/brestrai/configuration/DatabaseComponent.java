@@ -1,11 +1,12 @@
 package com.brestrai.configuration;
 
-import com.brestrai.utils.template.configurations.database.DatabaseConfiguration;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
-public class DatabaseComponent extends DatabaseConfiguration {
+/*
+ * Implementar @Component quando tiver a necessidade de utilizar o banco de dados
+ * Se não usar, descomente a linha do autoconfigure no application.properties
+ * */
+public class DatabaseComponent {
 
     @Value("${app.datasource.entity-scan-package}")
     private String entityScanPackage;
@@ -18,35 +19,7 @@ public class DatabaseComponent extends DatabaseConfiguration {
     @Value("${app.datasource.password}")
     private String password;
 
+    // TODO: Implement DatabaseComponent
 
-    @Override
-    public String getEntityScanPackage() {
-
-        return entityScanPackage;
-    }
-
-    @Override
-    public String getDriver() {
-
-        return driver;
-    }
-
-    @Override
-    public String getUrl() {
-
-        return url;
-    }
-
-    @Override
-    public String getUsername() {
-
-        return username;
-    }
-
-    @Override
-    public String getPassword() {
-
-        return password;
-    }
 
 }

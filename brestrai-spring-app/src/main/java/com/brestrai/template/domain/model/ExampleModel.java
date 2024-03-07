@@ -13,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ExampleModel implements IModel<ExampleDto> {
 
+    private Long id;
 
     @Override
     public ExampleDto toDto() {
