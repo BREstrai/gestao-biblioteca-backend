@@ -9,12 +9,7 @@ import org.springframework.stereotype.Service;
 public class ExampleService extends AbstractService {
 
     public void someMethod() {
-        // Implement method functionality
-        log.info("Executing someMethod in ConcreteClass");
-    }
 
-    public static void main(String[] args) {
-        ExampleService exampleService = new ExampleService();
-        exampleService.someMethod();
+        log.info("Executing someMethod in ConcreteClass");
     }
 }

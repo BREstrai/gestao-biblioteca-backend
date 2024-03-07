@@ -1,7 +1,7 @@
 package com.brestrai.template.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.brestrai.template.domain.dto.ExampleDto;
+import com.brestrai.utils.template.commons.domain.IModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,9 +11,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class ExampleModel {
+public class ExampleModel implements IModel<ExampleDto> {
 
-    @Id
-    private Long id;
+
+    @Override
+    public ExampleDto toDto() {
+        return null;
+    }
 }
