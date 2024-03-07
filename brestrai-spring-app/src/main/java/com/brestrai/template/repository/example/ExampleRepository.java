@@ -1,4 +1,4 @@
-package com.brestrai.template.repository;
+package com.brestrai.template.repository.example;
 
 import com.brestrai.template.domain.example.ExampleModel;
 import org.springframework.data.jpa.repository.JpaRepository;

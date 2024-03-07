@@ -1,4 +1,4 @@
-package com.brestrai.template.service;
+package com.brestrai.template.service.example;
 
 import com.brestrai.utils.template.commons.service.AbstractService;
 import lombok.RequiredArgsConstructor;
