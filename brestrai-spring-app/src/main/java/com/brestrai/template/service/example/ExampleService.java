@@ -1,6 +1,6 @@
 package com.brestrai.template.service.example;
 
-import com.brestrai.utils.template.commons.service.AbstractService;
+import com.brestrai.utils.commons.service.AbstractService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

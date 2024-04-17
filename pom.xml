@@ -25,7 +25,7 @@
 
         <dependency>
             <groupId>com.brestrai</groupId>
-            <artifactId>utils-template</artifactId>
+            <artifactId>utils</artifactId>
             <version>1.0.1</version>
         </dependency>
 
