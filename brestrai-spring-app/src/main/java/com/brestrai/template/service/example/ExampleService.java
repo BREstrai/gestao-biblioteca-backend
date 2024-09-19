@@ -10,6 +10,6 @@ public class ExampleService extends AbstractService {
 
     public void someMethod() {
 
-        log.info("Executing someMethod in ConcreteClass");
+        logInfo("Executing someMethod in ConcreteClass");
     }
 }
