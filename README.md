@@ -1,21 +1,33 @@
 # Backend - Gestão de Biblioteca
 
-### Backend utilizado para realizar os processos de crud para:
+Este projeto oferece uma API de backend para a gestão de uma biblioteca, permitindo operações de CRUD para usuários,
+livros e empréstimos.
 
-    - Usuarios (criação, atualização, busca de todos, busca por id e exclusão)
-    - Livros (criação, atualização, busca de todos, busca por id e exclusão)
-    - Empréstimos (emprestimos, devoluções, buscas e sugestões)
+## Funcionalidades
 
-### Para rodar o projeto é necessário:
+- **Usuários**:
+    - Criar, atualizar, buscar todos, buscar por ID e excluir.
 
-    - [IMPORTANTE] Clonar o projeto disponível em: https://github.com/BREstrai/brestrai-utils  
-        - Compilar o projeto através da instrução do READ-ME
-        - O brestrai-utils é um utilitário desenvolvido por mim para abstrair funcionalidades entre projetos
-        
-    - Ter o Postgres instalado ou rodar através do docker pelo arquivo [docker-compose.yaml] da raiz.
-        - Caso utilize uma versão instalada em sua máquina, é necessário configurar no application.properties a conexão
+- **Livros**:
+    - Criar, atualizar, buscar todos, buscar por ID e excluir.
 
-### Para realizar testes sem a utilização de um frontend, é possível utilizar dentro dos resources/postman o arquivo:
+- **Empréstimos**:
+    - Registrar empréstimos, realizar devoluções, buscar empréstimos e sugerir livros.
 
-[gestao biblioteca.postman_collection.json](gestao-biblioteca-app%2Fsrc%2Fmain%2Fresources%2Fpostman%2Fgestao%20biblioteca.postman_collection.json)
+## Como Rodar o Projeto
 
+### Pré-requisitos
+
+1. **Clonar e Compilar o Projeto `brestrai-utils`**:
+    - Clone o repositório: [https://github.com/BREstrai/brestrai-utils](https://github.com/BREstrai/brestrai-utils).
+    - Compile o projeto seguindo as instruções do README.
+    - O `brestrai-utils` é uma biblioteca de utilitários desenvolvida para facilitar a abstração de funcionalidades
+      comuns entre projetos, ele contém algumas abstrações e configurações necessárias para rodar esse projeto.
+
+2. **Configuração do Banco de Dados (PostgreSQL)**:
+    - **Usando Docker**:
+        - Utilize o arquivo `docker-compose.yaml` localizado na raiz do projeto para rodar o PostgreSQL via Docker.
+
+    - **Instalação Local**:
+        - Se o PostgreSQL estiver instalado localmente, configure a conexão no arquivo `application.properties` de
+          acordo com suas credenciais locais.
