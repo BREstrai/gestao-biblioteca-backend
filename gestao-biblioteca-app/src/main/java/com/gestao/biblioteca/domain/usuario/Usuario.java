@@ -25,7 +25,7 @@ public class Usuario implements IModel<UsuarioDto> {
 
     private String telefone;
 
-    @Column(name = "DATA_CADASTRO")
+    @Column(name = "DATA_CADASTRO", insertable = false)
     private LocalDateTime dhCadastro;
 
     @Override
@@ -35,13 +35,14 @@ public class Usuario implements IModel<UsuarioDto> {
                 this.id,
                 this.nome,
                 this.email,
-                this.telefone
+                this.telefone,
+                this.dhCadastro
         );
     }
 
     @Override
     public String toString() {
-        
+
         return "Usuario{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +

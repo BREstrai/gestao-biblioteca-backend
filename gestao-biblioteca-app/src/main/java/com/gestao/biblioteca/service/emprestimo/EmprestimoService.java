@@ -47,7 +47,6 @@ public class EmprestimoService extends AbstractService {
         validarTentativaEmprestarLivroIndisponivel(model);
 
         model.setStatus(StatusEmprestimo.EMPRESTADO.getCodigo());
-        model.setDhEmprestimo(LocalDateTime.now());
 
         return emprestimoRepository.save(model);
     }

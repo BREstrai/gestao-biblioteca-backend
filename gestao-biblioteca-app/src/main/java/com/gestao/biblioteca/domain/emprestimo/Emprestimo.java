@@ -32,7 +32,7 @@ public class Emprestimo implements IModel<EmprestimoDto> {
 
     private Long status;
 
-    @Column(name = "DATA_EMPRESTIMO")
+    @Column(name = "DATA_EMPRESTIMO", insertable = false)
     private LocalDateTime dhEmprestimo;
 
     @Column(name = "DATA_DEVOLUCAO")

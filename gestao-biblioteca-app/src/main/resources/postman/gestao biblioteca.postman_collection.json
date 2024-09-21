@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Bruno Estrai\",\r\n    \"email\": \"brunoestrai@gmail.com\",\r\n    \"telefone\": \"46988275899\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Rudinei\",\r\n    \"email\": \"estrai2024@gmail.com\",\r\n    \"telefone\": \"46988275899\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -129,7 +129,7 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8081/api/usuario/7",
+							"raw": "127.0.0.1:8081/api/usuario/12",
 							"host": [
 								"127",
 								"0",
@@ -140,7 +140,7 @@
 							"path": [
 								"api",
 								"usuario",
-								"7"
+								"12"
 							]
 						}
 					},
@@ -161,7 +161,7 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8081/api/usuario?idUsuario=1",
+							"raw": "127.0.0.1:8081/api/usuario?idUsuario=9",
 							"host": [
 								"127",
 								"0",
@@ -176,7 +176,7 @@
 							"query": [
 								{
 									"key": "idUsuario",
-									"value": "1"
+									"value": "9"
 								}
 							]
 						}
@@ -340,7 +340,7 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8081/api/livro?idLivro=1",
+							"raw": "127.0.0.1:8081/api/livro?idLivro=5",
 							"host": [
 								"127",
 								"0",
@@ -355,7 +355,7 @@
 							"query": [
 								{
 									"key": "idLivro",
-									"value": "1"
+									"value": "5"
 								}
 							]
 						}
@@ -395,7 +395,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "127.0.0.1:8081/api/emprestimo/3",
+							"raw": "127.0.0.1:8081/api/emprestimo/18",
 							"host": [
 								"127",
 								"0",
@@ -406,7 +406,7 @@
 							"path": [
 								"api",
 								"emprestimo",
-								"3"
+								"18"
 							]
 						}
 					},
@@ -419,7 +419,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"usuario\": {\r\n    \"idUsuario\": 1,\r\n    \"nome\": \"Bruno Estrai\",\r\n    \"email\": \"brunoestrai@gmail.com\",\r\n    \"telefone\": \"123456789\"\r\n  },\r\n  \"livro\": {\r\n    \"id\": 1,\r\n    \"titulo\": \"Clean Code\",\r\n    \"autor\": \"Lima\",\r\n    \"isbn\": \"\",\r\n    \"categoria\": \"FICCAO\"\r\n  }\r\n}",
+							"raw": "{\r\n  \"usuario\": {\r\n    \"idUsuario\": 1,\r\n    \"nome\": \"Bruno Estrai\",\r\n    \"email\": \"brunoestrai@gmail.com\",\r\n    \"telefone\": \"123456789\"\r\n  },\r\n  \"livro\": {\r\n    \"id\": 2,\r\n    \"titulo\": \"Clean Code\",\r\n    \"autor\": \"Lima\",\r\n    \"isbn\": \"\",\r\n    \"categoria\": \"FICCAO\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -450,7 +450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"usuario\": {\r\n    \"idUsuario\": 1,\r\n    \"nome\": \"Nome do Usuário\",\r\n    \"email\": \"usuario@email.com\",\r\n    \"telefone\": \"123456789\"\r\n  },\r\n  \"livro\": {\r\n    \"id\": 1,\r\n    \"titulo\": \"Título do Livro\",\r\n    \"autor\": \"Autor do Livro\",\r\n    \"isbn\": \"1234567890123\",\r\n    \"categoria\": \"FICCAO\",\r\n    \"dhPublicacao\": \"2024-09-20T10:15:30\"\r\n  },\r\n  \"dhEmprestimo\": \"2024-09-20T10:15:30\",\r\n  \"dhDevolucao\": \"2024-09-27T10:15:30\"\r\n}",
+							"raw": "{\r\n  \"usuario\": {\r\n    \"idUsuario\": 1,\r\n    \"nome\": \"Nome do Usuário\",\r\n    \"email\": \"usuario@email.com\",\r\n    \"telefone\": \"123456789\"\r\n  },\r\n  \"livro\": {\r\n    \"id\": 1,\r\n    \"titulo\": \"Título do Livro\",\r\n    \"autor\": \"Autor do Livro\",\r\n    \"isbn\": \"1234567890123\",\r\n    \"categoria\": \"FICCAO\",\r\n    \"dhPublicacao\": \"2024-09-20T10:15:30\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -458,7 +458,7 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8081/api/emprestimo?idEmprestimo=16",
+							"raw": "127.0.0.1:8081/api/emprestimo?idEmprestimo=18",
 							"host": [
 								"127",
 								"0",
@@ -473,7 +473,7 @@
 							"query": [
 								{
 									"key": "idEmprestimo",
-									"value": "16"
+									"value": "18"
 								}
 							]
 						}

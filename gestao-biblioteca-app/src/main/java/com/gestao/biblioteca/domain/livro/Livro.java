@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Table(name = "LIVROS")
 @Entity
@@ -42,6 +43,25 @@ public class Livro implements IModel<LivroDto> {
                 Categorias.fromCodigo(this.categoria),
                 this.dhPublicacao
         );
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+
+        if (!(o instanceof Livro)) return false;
+
+        Livro livro = (Livro) o;
+
+        return Objects.equals(id, livro.id) && Objects.equals(isbn, livro.isbn) &&
+                Objects.equals(categoria, livro.categoria);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, isbn, categoria);
     }
 
     @Override
