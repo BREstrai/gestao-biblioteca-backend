@@ -9,32 +9,28 @@
         <relativePath/>
     </parent>
     <groupId>com.brestrai</groupId>
-    <artifactId>brestrai-spring-template</artifactId>
+    <artifactId>gestao-biblioteca</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>brestrai-spring-template</name>
     <description>Template</description>
     <modules>
-        <module>brestrai-spring-configuration</module>
-        <module>brestrai-spring-app</module>
+        <module>gestao-biblioteca-configuration</module>
+        <module>gestao-biblioteca-app</module>
     </modules>
     <properties>
         <java.version>17</java.version>
     </properties>
     <dependencies>
-
         <dependency>
             <groupId>com.brestrai</groupId>
             <artifactId>utils</artifactId>
             <version>1.0.1</version>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
     </dependencies>
-
 </project>
