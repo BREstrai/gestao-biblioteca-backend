@@ -44,6 +44,7 @@ public class EmprestimoService extends AbstractService {
         Emprestimo model = emprestimoDto.toModel();
 
         validarPartesEmprestimo(model);
+
         validarTentativaEmprestarLivroIndisponivel(model);
 
         model.setStatus(StatusEmprestimo.EMPRESTADO.getCodigo());
@@ -55,7 +56,7 @@ public class EmprestimoService extends AbstractService {
 
         Emprestimo emprestimo = buscarEmprestimoPorId(idEmprestimo);
 
-        validarStatusEmprestimo(emprestimo);
+        validarDevolucao(emprestimo);
 
         emprestimo.setStatus(StatusEmprestimo.DISPONIVEL.getCodigo());
         emprestimo.setDhDevolucao(LocalDateTime.now());
@@ -63,9 +64,9 @@ public class EmprestimoService extends AbstractService {
         return emprestimoRepository.save(emprestimo);
     }
 
-    public Emprestimo buscarEmprestimoPorId(Long idLivro) {
+    public Emprestimo buscarEmprestimoPorId(Long idEmprestimo) {
 
-        Optional<Emprestimo> emprestimoOptional = emprestimoRepository.findById(idLivro);
+        Optional<Emprestimo> emprestimoOptional = emprestimoRepository.findById(idEmprestimo);
 
         if (emprestimoOptional.isPresent()) {
 
@@ -74,12 +75,14 @@ public class EmprestimoService extends AbstractService {
             return emprestimo;
         }
 
-        String msg = String.format("Não foi possível localizar o empréstimo pelo ID %s", idLivro);
+        String msg = String.format("Não foi possível localizar o empréstimo pelo ID %s", idEmprestimo);
 
         throw new DevolucaoException(msg, new ErrorResponse(HttpStatus.NOT_FOUND, msg));
     }
 
     public List<Livro> buscarSugestaoEmprestimos(Long idUsuario) {
+
+        validarUsuario(idUsuario);
 
         List<Emprestimo> listaEmprestimos = emprestimoRepository.findByUsuarioId(idUsuario);
 
@@ -99,7 +102,7 @@ public class EmprestimoService extends AbstractService {
         }
     }
 
-    private void validarStatusEmprestimo(Emprestimo model) {
+    private void validarDevolucao(Emprestimo model) {
 
         if (!StatusEmprestimo.isEmprestado(model.getStatus())) {
 
@@ -113,15 +116,9 @@ public class EmprestimoService extends AbstractService {
 
         try {
 
-            livroService.buscarLivroPorId(model.getLivro().getId());
-            usuarioService.buscarUsuarioPorId(model.getUsuario().getId());
-        } catch (UsuarioException e) {
+            validarLivro(model);
 
-            String msg = "Não foi possíve localizar o usuário informado para emprestar o livro. ";
-
-            logWarn(msg + model.getLivro().toString());
-
-            throw new DevolucaoException(msg, new ErrorResponse(HttpStatus.BAD_REQUEST, msg));
+            validarUsuario(model.getUsuario().getId());
         } catch (LivroException e) {
 
             String msg = "Não foi possíve localizar o livro informado para emprestimo. ";
@@ -129,6 +126,23 @@ public class EmprestimoService extends AbstractService {
             logWarn(msg + model.getLivro().toString());
 
             throw new DevolucaoException(msg, new ErrorResponse(HttpStatus.BAD_REQUEST, msg));
+        } catch (UsuarioException e) {
+
+            String msg = "Não foi possíve localizar o usuário informado para emprestar o livro. ";
+
+            logWarn(msg + model.getLivro().toString());
+
+            throw new DevolucaoException(msg, new ErrorResponse(HttpStatus.BAD_REQUEST, msg));
         }
+    }
+
+    private void validarLivro(Emprestimo model) {
+
+        livroService.buscarLivroPorId(model.getLivro().getId());
+    }
+
+    private void validarUsuario(Long idUsuario) {
+
+        usuarioService.buscarUsuarioPorId(idUsuario);
     }
 }

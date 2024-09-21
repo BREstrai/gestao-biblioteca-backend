@@ -450,7 +450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"usuario\": {\r\n    \"idUsuario\": 1,\r\n    \"nome\": \"Nome do Usuário\",\r\n    \"email\": \"usuario@email.com\",\r\n    \"telefone\": \"123456789\"\r\n  },\r\n  \"livro\": {\r\n    \"id\": 1,\r\n    \"titulo\": \"Título do Livro\",\r\n    \"autor\": \"Autor do Livro\",\r\n    \"isbn\": \"1234567890123\",\r\n    \"categoria\": \"FICCAO\",\r\n    \"dhPublicacao\": \"2024-09-20T10:15:30\"\r\n  }\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
