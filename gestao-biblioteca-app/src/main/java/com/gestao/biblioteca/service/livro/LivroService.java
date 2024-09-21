@@ -7,6 +7,7 @@ import com.gestao.biblioteca.domain.livro.Livro;
 import com.gestao.biblioteca.domain.livro.LivroDto;
 import com.gestao.biblioteca.exceptions.LivroException;
 import com.gestao.biblioteca.repository.livro.LivroRepository;
+import com.gestao.biblioteca.service.emprestimo.CheckRelacionamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,9 @@ public class LivroService extends AbstractService {
 
     @Autowired
     private LivroRepository livroRepository;
+
+    @Autowired
+    private CheckRelacionamentoService checkRelacionamentoService;
 
     public List<Livro> buscarTodosLivros() {
 
@@ -70,6 +74,8 @@ public class LivroService extends AbstractService {
     }
 
     public void deletarLivro(Long idLivro) {
+
+        checkRelacionamentoService.permiteDeletarLivro(idLivro);
 
         Livro livro = buscarLivroPorId(idLivro);
 

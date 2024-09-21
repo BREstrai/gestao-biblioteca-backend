@@ -12,8 +12,8 @@
     <artifactId>gestao-biblioteca</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>brestrai-spring-template</name>
-    <description>Template</description>
+    <name>gestao-biblioteca</name>
+    <description>Gestão para Biblioteca</description>
     <modules>
         <module>gestao-biblioteca-configuration</module>
         <module>gestao-biblioteca-app</module>

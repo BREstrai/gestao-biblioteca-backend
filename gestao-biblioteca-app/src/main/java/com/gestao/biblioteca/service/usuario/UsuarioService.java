@@ -6,6 +6,7 @@ import com.gestao.biblioteca.domain.usuario.Usuario;
 import com.gestao.biblioteca.domain.usuario.UsuarioDto;
 import com.gestao.biblioteca.exceptions.UsuarioException;
 import com.gestao.biblioteca.repository.usuario.UsuarioRepository;
+import com.gestao.biblioteca.service.emprestimo.CheckRelacionamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,9 @@ public class UsuarioService extends AbstractService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private CheckRelacionamentoService checkRelacionamentoService;
 
     public List<Usuario> buscarTodosUsuarios() {
 
@@ -62,6 +66,8 @@ public class UsuarioService extends AbstractService {
     }
 
     public void deletarUsuario(Long idUsuario) {
+
+        checkRelacionamentoService.permiteDeletarUsuario(idUsuario);
 
         Usuario usuario = buscarUsuarioPorId(idUsuario);
 
