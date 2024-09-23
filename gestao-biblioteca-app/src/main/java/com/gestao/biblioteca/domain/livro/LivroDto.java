@@ -2,6 +2,7 @@ package com.gestao.biblioteca.domain.livro;
 
 import com.brestrai.utils.commons.domain.IDto;
 import com.gestao.biblioteca.domain.enumerations.Categorias;
+import com.gestao.biblioteca.domain.enumerations.StatusEmprestimo;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -22,7 +23,9 @@ public record LivroDto(
         Categorias categoria,
 
         @NotNull(message = "Categoria do livro é obrigatório")
-        LocalDateTime dhPublicacao
+        LocalDateTime dhPublicacao,
+
+        StatusEmprestimo StatusEmprestimo
 ) implements IDto<Livro> {
 
     @Override

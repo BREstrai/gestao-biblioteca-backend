@@ -3,6 +3,7 @@ package com.gestao.biblioteca.service.livro;
 import com.brestrai.utils.commons.domain.response.ErrorResponse;
 import com.brestrai.utils.commons.service.AbstractService;
 import com.gestao.biblioteca.domain.emprestimo.Emprestimo;
+import com.gestao.biblioteca.domain.enumerations.StatusEmprestimo;
 import com.gestao.biblioteca.domain.livro.Livro;
 import com.gestao.biblioteca.domain.livro.LivroDto;
 import com.gestao.biblioteca.exceptions.LivroException;
@@ -29,7 +30,21 @@ public class LivroService extends AbstractService {
 
     public List<Livro> buscarTodosLivros() {
 
-        return livroRepository.findAll();
+        List<Livro> todosLivros = livroRepository.findAll();
+
+        todosLivros.forEach(livro -> {
+
+            atribuirStatus(livro);
+        });
+
+        return todosLivros;
+    }
+
+    private void atribuirStatus(Livro livro) {
+
+        StatusEmprestimo statusEmprestimo = checkRelacionamentoService.consultarStatusLivro(livro);
+
+        livro.setStatusEmprestimo(statusEmprestimo);
     }
 
     public Livro criarLivro(LivroDto livroDto) {
@@ -64,6 +79,8 @@ public class LivroService extends AbstractService {
         if (livroOptional.isPresent()) {
 
             Livro livro = livroOptional.get();
+
+            atribuirStatus(livro);
 
             return livro;
         }

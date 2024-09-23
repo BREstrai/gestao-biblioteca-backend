@@ -2,6 +2,7 @@ package com.gestao.biblioteca.domain.livro;
 
 import com.brestrai.utils.commons.domain.IModel;
 import com.gestao.biblioteca.domain.enumerations.Categorias;
+import com.gestao.biblioteca.domain.enumerations.StatusEmprestimo;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,6 +33,9 @@ public class Livro implements IModel<LivroDto> {
     @Column(name = "DATA_PUBLICACAO")
     private LocalDateTime dhPublicacao;
 
+    @Transient
+    private StatusEmprestimo statusEmprestimo;
+
     @Override
     public LivroDto toDto() {
 
@@ -41,7 +45,8 @@ public class Livro implements IModel<LivroDto> {
                 this.autor,
                 this.isbn,
                 Categorias.fromCodigo(this.categoria),
-                this.dhPublicacao
+                this.dhPublicacao,
+                statusEmprestimo
         );
     }
 

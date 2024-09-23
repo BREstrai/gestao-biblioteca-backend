@@ -1,10 +1,13 @@
 package com.gestao.biblioteca.service.emprestimo;
 
 import com.gestao.biblioteca.domain.emprestimo.Emprestimo;
+import com.gestao.biblioteca.domain.enumerations.StatusEmprestimo;
+import com.gestao.biblioteca.domain.livro.Livro;
 import com.gestao.biblioteca.exceptions.LivroException;
 import com.gestao.biblioteca.exceptions.UsuarioException;
 import com.gestao.biblioteca.repository.emprestimo.EmprestimoRepository;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +18,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Collections;
 
+import static com.gestao.biblioteca.domain.enumerations.StatusEmprestimo.DISPONIVEL;
+import static com.gestao.biblioteca.domain.enumerations.StatusEmprestimo.EMPRESTADO;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -29,6 +34,9 @@ public class CheckRelacionamentoServiceTest {
 
     @Mock
     private Emprestimo emprestimo;
+
+    @Mock
+    private Livro livro;
 
     private AutoCloseable autoCloseable;
 
@@ -76,4 +84,29 @@ public class CheckRelacionamentoServiceTest {
         checkRelacionamentoService.permiteDeletarLivro(1L);
     }
 
+    @Test
+    public void testa_se_nao_existe_livro_emprestado_retorna_status_disponivel() {
+
+        when(livro.getId()).thenReturn(1L);
+
+        when(emprestimoRepository.findByLivroIdAndStatus(livro.getId(), EMPRESTADO.getCodigo()))
+                .thenReturn(null);
+
+        StatusEmprestimo statusEmprestimo = checkRelacionamentoService.consultarStatusLivro(livro);
+
+        Assert.assertEquals(DISPONIVEL, statusEmprestimo);
+    }
+
+    @Test
+    public void testa_se_existe_livro_emprestado_retorna_status_emprestado() {
+
+        when(livro.getId()).thenReturn(1L);
+
+        when(emprestimoRepository.findByLivroIdAndStatus(livro.getId(), EMPRESTADO.getCodigo()))
+                .thenReturn(emprestimo);
+
+        StatusEmprestimo statusEmprestimo = checkRelacionamentoService.consultarStatusLivro(livro);
+
+        Assert.assertEquals(EMPRESTADO, statusEmprestimo);
+    }
 }

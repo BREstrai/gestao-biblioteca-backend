@@ -24,6 +24,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import static com.gestao.biblioteca.domain.enumerations.StatusEmprestimo.DISPONIVEL;
 import static org.mockito.ArgumentMatchers.any;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -42,7 +43,7 @@ public class LivroServiceTest {
     private Livro livro;
 
     private final LivroDto livroDto = new LivroDto(1L, "Clean Code", "Bruno Estrai",
-            "000000000000", Categorias.FICCAO, LocalDateTime.now());
+            "000000000000", Categorias.FICCAO, LocalDateTime.now(), DISPONIVEL);
 
     private AutoCloseable autoCloseable;
 
