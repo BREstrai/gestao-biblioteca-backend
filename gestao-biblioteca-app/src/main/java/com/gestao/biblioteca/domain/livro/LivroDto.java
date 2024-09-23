@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public record LivroDto(
-        Long id,
+        Long idLivro,
         @NotBlank(message = "Titulo do livro é obrigatório")
         String titulo,
 
@@ -29,7 +29,7 @@ public record LivroDto(
     public Livro toModel() {
 
         return Livro.builder()
-                .id(this.id)
+                .id(this.idLivro)
                 .titulo(this.titulo)
                 .autor(this.autor)
                 .categoria(this.categoria.getCodigo())

@@ -68,7 +68,7 @@ public class Livro implements IModel<LivroDto> {
     public String toString() {
 
         return "Livro{" +
-                "id=" + id +
+                "idLivro=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
                 ", isbn='" + isbn + '\'' +

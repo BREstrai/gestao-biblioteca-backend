@@ -9,7 +9,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public record EmprestimoDto(
-        Long id,
+        Long idEmprestimo,
 
         @NotNull(message = "Usuário do empréstimo é obrigatório")
         UsuarioDto usuario,
@@ -28,7 +28,7 @@ public record EmprestimoDto(
     public Emprestimo toModel() {
 
         return Emprestimo.builder()
-                .id(this.id)
+                .id(this.idEmprestimo)
                 .livro(this.livro.toModel())
                 .usuario(this.usuario.toModel())
                 .build();

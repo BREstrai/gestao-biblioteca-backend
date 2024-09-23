@@ -55,7 +55,7 @@ public class Emprestimo implements IModel<EmprestimoDto> {
     public String toString() {
 
         return "Emprestimo{" +
-                "id=" + id +
+                "idLivro=" + id +
                 ", usuario=" + usuario +
                 ", livro=" + livro +
                 ", status=" + status +

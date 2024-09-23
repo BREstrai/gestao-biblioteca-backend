@@ -44,7 +44,7 @@ public class Usuario implements IModel<UsuarioDto> {
     public String toString() {
 
         return "Usuario{" +
-                "id=" + id +
+                "idLivro=" + id +
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", telefone='" + telefone + '\'' +
