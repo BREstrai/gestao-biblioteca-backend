@@ -129,7 +129,7 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8081/api/usuario/13",
+							"raw": "127.0.0.1:8081/api/usuario/1",
 							"host": [
 								"127",
 								"0",
@@ -140,7 +140,7 @@
 							"path": [
 								"api",
 								"usuario",
-								"13"
+								"1"
 							]
 						}
 					},
@@ -195,7 +195,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Clean Code Patterns\",\r\n    \"autor\": \"Algum Dev\",\r\n    \"isbn\": \"00001000500\",\r\n    \"categoria\": \"FICCAO\",\r\n    \"dhPublicacao\": \"2024-01-03T10:15:30.550000\"\r\n}",
+							"raw": "{\r\n    \"titulo\": \"Clean Code Patterns\",\r\n    \"autor\": \"Algum Dev\",\r\n    \"isbn\": \"00001000500\",\r\n    \"categoria\": \"FICCAO\",\r\n    \"dhPublicacao\": \"2024-01-03\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -226,7 +226,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Clean Code\",\r\n    \"autor\": \"Lima\",\r\n    \"isbn\": \"0000001000\",\r\n    \"categoria\": \"FICCAO\",\r\n    \"dhPublicacao\": \"2004-12-03T10:15:30.550000\"\r\n}",
+							"raw": "{\r\n    \"titulo\": \"Clean Code\",\r\n    \"autor\": \"Lima\",\r\n    \"isbn\": \"0000001000\",\r\n    \"categoria\": \"FICCAO\",\r\n    \"dhPublicacao\": \"2002-12-03\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -340,7 +340,7 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8081/api/livro?idLivro=5",
+							"raw": "127.0.0.1:8081/api/livro?idLivro=1",
 							"host": [
 								"127",
 								"0",
@@ -355,7 +355,7 @@
 							"query": [
 								{
 									"key": "idLivro",
-									"value": "5"
+									"value": "1"
 								}
 							]
 						}
@@ -419,7 +419,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"usuario\": {\r\n    \"idUsuario\": 13,\r\n    \"nome\": \"Bruno Estrai\",\r\n    \"email\": \"brunoestrai@gmail.com\",\r\n    \"telefone\": \"123456789\"\r\n  },\r\n  \"livro\": {\r\n    \"idLivro\": 3,\r\n    \"titulo\": \"Clean Code\",\r\n    \"autor\": \"Lima\",\r\n    \"isbn\": \"\",\r\n    \"categoria\": \"FICCAO\"\r\n  }\r\n}",
+							"raw": "{\r\n  \"usuario\": {\r\n    \"idUsuario\": 1,\r\n    \"nome\": \"Bruno Estrai\",\r\n    \"email\": \"brunoestrai@gmail.com\",\r\n    \"telefone\": \"123456789\"\r\n  },\r\n  \"livro\": {\r\n    \"idLivro\": 1,\r\n    \"titulo\": \"Clean Code\",\r\n    \"autor\": \"Lima\",\r\n    \"isbn\": \"\",\r\n    \"categoria\": \"FICCAO\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -458,7 +458,7 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8081/api/emprestimo?idEmprestimo=21",
+							"raw": "127.0.0.1:8081/api/emprestimo?idEmprestimo=22",
 							"host": [
 								"127",
 								"0",
@@ -473,7 +473,7 @@
 							"query": [
 								{
 									"key": "idEmprestimo",
-									"value": "21"
+									"value": "22"
 								}
 							]
 						}

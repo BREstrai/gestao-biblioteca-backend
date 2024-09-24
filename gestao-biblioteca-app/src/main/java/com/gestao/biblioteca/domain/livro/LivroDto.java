@@ -6,7 +6,7 @@ import com.gestao.biblioteca.domain.enumerations.StatusEmprestimo;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public record LivroDto(
         Long idLivro,
@@ -22,8 +22,8 @@ public record LivroDto(
         @NotNull(message = "Categoria do livro é obrigatório")
         Categorias categoria,
 
-        @NotNull(message = "Categoria do livro é obrigatório")
-        LocalDateTime dhPublicacao,
+        @NotNull(message = "Data de Publicacao do livro é obrigatório")
+        LocalDate dhPublicacao,
 
         StatusEmprestimo StatusEmprestimo
 ) implements IDto<Livro> {

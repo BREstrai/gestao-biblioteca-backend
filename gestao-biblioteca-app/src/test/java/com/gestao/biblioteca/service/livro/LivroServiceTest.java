@@ -18,7 +18,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -43,7 +43,7 @@ public class LivroServiceTest {
     private Livro livro;
 
     private final LivroDto livroDto = new LivroDto(1L, "Clean Code", "Bruno Estrai",
-            "000000000000", Categorias.FICCAO, LocalDateTime.now(), DISPONIVEL);
+            "000000000000", Categorias.FICCAO, LocalDate.now(), DISPONIVEL);
 
     private AutoCloseable autoCloseable;
 
@@ -120,7 +120,7 @@ public class LivroServiceTest {
 
         Mockito.when(livroRepository.findById(1L)).thenReturn(Optional.of(livro));
 
-        Mockito.when(livro.getDhPublicacao()).thenReturn(LocalDateTime.now().minusDays(1));
+        Mockito.when(livro.getDhPublicacao()).thenReturn(LocalDate.now().minusDays(1));
 
         livroService.atualizar(1L, livroDto);
 
@@ -140,7 +140,7 @@ public class LivroServiceTest {
 
         Mockito.when(livroRepository.findById(1L)).thenReturn(Optional.of(livro));
 
-        Mockito.when(livro.getDhPublicacao()).thenReturn(LocalDateTime.now().plusDays(5));
+        Mockito.when(livro.getDhPublicacao()).thenReturn(LocalDate.now().plusDays(5));
 
         livroService.atualizar(1L, livroDto);
     }

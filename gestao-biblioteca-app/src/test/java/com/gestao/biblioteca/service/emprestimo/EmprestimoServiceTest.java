@@ -24,6 +24,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -64,7 +65,7 @@ public class EmprestimoServiceTest {
 
     private AutoCloseable autoCloseable;
 
-    LivroDto livroDto = new LivroDto(2L, "Clean Code", "Lima", "1234567890", Categorias.FICCAO, LocalDateTime.now(), DISPONIVEL);
+    LivroDto livroDto = new LivroDto(2L, "Clean Code", "Lima", "1234567890", Categorias.FICCAO, LocalDate.now(), DISPONIVEL);
     UsuarioDto usuarioDto = new UsuarioDto(1L, "Bruno Estrai", "brunoestrai@gmail.com", "123456789", LocalDateTime.now());
     EmprestimoDto emprestimoDto = new EmprestimoDto(1L, usuarioDto, livroDto, StatusEmprestimo.DISPONIVEL, null, null);
 

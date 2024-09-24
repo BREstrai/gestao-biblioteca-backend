@@ -6,7 +6,7 @@ import com.gestao.biblioteca.domain.enumerations.StatusEmprestimo;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Table(name = "LIVROS")
@@ -31,7 +31,7 @@ public class Livro implements IModel<LivroDto> {
     private Long categoria;
 
     @Column(name = "DATA_PUBLICACAO")
-    private LocalDateTime dhPublicacao;
+    private LocalDate dhPublicacao;
 
     @Transient
     private StatusEmprestimo statusEmprestimo;
